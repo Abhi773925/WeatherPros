@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #ff6b6b, #ffa36b, #ffdb6b, #cfff6b, #6bff6b);
+            background-size: 500% 500%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            width: 350px;
+            margin: 20px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+            animation: fadeIn 0.5s ease-out;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            font-size: 16px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px #4CAF50;
+        }
+
+        label:hover {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .already-account {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .already-account a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .already-account a:hover {
+            color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sun animation */
+        .sun {
+            position: absolute;
+            top: 10%;
+            left: 80%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ffdb6b;
+            animation: sunMove 30s linear infinite alternate;
+            z-index: 0;
+            box-shadow: 0 0 50px rgba(255, 219, 107, 0.5);
+        }
+
+        @keyframes sunMove {
+            0% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Cloud animation */
+        .cloud {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 200px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: cloudMove 30s linear infinite alternate;
+            z-index: 0;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(-10px);
+            }
+
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        /* Raindrops animation */
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: raindropFall 3s linear infinite, raindropFade 2s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes raindropFall {
+            0% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes raindropFade {
+            0% {
+                opacity: 50;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sun"></div>
+    <div class="cloud"></div>
+    <div class="cloud" style="top: 10%; left: 60%;"></div>
+    <div class="cloud" style="top: 40%; left: 30%;"></div>
+    <div class="cloud" style="top: 30%; left: 80%;"></div>
+
+    <div class="raindrop" style="left: 10%;"></div>
+    <div class="raindrop" style="left: 20%;"></div>
+    <div class="raindrop" style="left: 30%;"></div>
+    <div class="raindrop" style="left: 40%;"></div>
+    <div class="raindrop" style="left: 50%;"></div>
+    <div class="raindrop" style="left: 60%;"></div>
+    <div class="raindrop" style="left: 70%;"></div>
+    <div class="raindrop" style="left: 80%;"></div>
+    <div class="raindrop" style="left: 90%;"></div>
+
+    <div class="container">
+        <h2>Register Now</h2>
+        <form id="registrationForm" action="/signup" method="post">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="already-account">
+            Already have an account? <a href="/login">Login here</a>.
+        </div>
+    </div>
+</body>
+
+</html>

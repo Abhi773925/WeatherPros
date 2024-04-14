@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Message</title>
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cloud animation */
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            animation: cloudMove 20s linear infinite alternate;
+        }
+
+        @keyframes cloudMove {
+            0% { transform: translateX(-20px) translateY(-10px); }
+            100% { transform: translateX(20px) translateY(10px); }
+        }
+
+        /* Sun animation */
+        .sun {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: #ffdb6b;
+            border-radius: 50%;
+            animation: sunMove 30s linear infinite alternate;
+        }
+
+        @keyframes sunMove {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
+        }
+
+        /* Message container styles */
+        .message-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 1s ease-out, moveUp 1s ease-out;
+            position: relative;
+            z-index: 1;
+            width: 400px;
+            max-width: 80%;
+        }
+
+        /* Error message styles */
+        h2 {
+            font-size: 32px;
+            color: #ff6347; /* Tomato */
+            margin-bottom: 20px;
+            animation: shake 0.5s ease-out 1s;
+        }
+
+        /* Paragraph styles */
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Link styles */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+
+        /* Keyframes for fading in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Keyframes for sliding in */
+        @keyframes moveUp {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        /* Keyframes for shaking */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80%, 100% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clouds -->
+    <div class="cloud" style="top: 20%; left: 10%;"></div>
+    <div class="cloud" style="top: 30%; left: 40%;"></div>
+    <div class="cloud" style="top: 40%; left: 70%;"></div>
+
+    <!-- Sun -->
+    <div class="sun"></div>
+    
+    <!-- Error message container -->
+    <div class="message-container">
+        <h2>Invalid username or password</h2>
+        <p>Please check your credentials and try again.</p>
+        <p>Click <a href="/login">here</a> to login or click <a href="/">here</a> to register.</p>
+    </div>
+</body>
+</html>

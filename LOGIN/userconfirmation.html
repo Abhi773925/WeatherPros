@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #ff6b6b, #ffa36b, #ffdb6b, #cfff6b, #6bff6b);
+            background-size: 500% 500%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Sun animation */
+        .sun {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: #ffdb6b;
+            border-radius: 50%;
+            animation: sunMove 30s linear infinite alternate;
+        }
+
+        @keyframes sunMove {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
+        }
+
+        /* Cloud animation */
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            animation: cloudMove 20s linear infinite alternate;
+        }
+
+        @keyframes cloudMove {
+            0% { transform: translateX(-20px) translateY(-10px); }
+            100% { transform: translateX(20px) translateY(10px); }
+        }
+
+        /* Confirmation message styling */
+        .confirmation-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.5s ease-out, bounce 1s ease-out 0.5s;
+            z-index: 1;
+            max-width: 80%;
+        }
+
+        .confirmation-message h2 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        .confirmation-message p {
+            color: #555;
+            font-size: 20px;
+            margin-bottom: 20px;
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        .confirmation-message a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .confirmation-message a:hover {
+            color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(-20px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sun -->
+    <div class="sun"></div>
+    
+    <!-- Clouds -->
+    <div class="cloud" style="top: 20%; left: 10%;"></div>
+    <div class="cloud" style="top: 30%; left: 40%;"></div>
+    <div class="cloud" style="top: 40%; left: 70%;"></div>
+
+    <!-- Confirmation message -->
+    <div class="confirmation-message">
+        <h2>User registered successfully!</h2>
+        <p>Click <a href="/login">here</a> to login or click <a href="/">here</a> to register another user.</p>
+    </div>
+</body>
+
+</html>

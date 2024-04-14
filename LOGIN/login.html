@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 24px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1e90ff, #00bfff, #87ceeb, #00ced1, #20b2aa);
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 4px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: raindropFall 2s linear infinite, raindropFade 2s linear infinite;
+        }
+
+        @keyframes raindropFall {
+            0% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes raindropFade {
+            0% {
+                opacity: 50;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/loggedin" method="post">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="raindrop" style="left: 10%;"></div>
+    <div class="raindrop" style="left: 20%;"></div>
+    <div class="raindrop" style="left: 30%;"></div>
+    <div class="raindrop" style="left: 40%;"></div>
+    <div class="raindrop" style="left: 50%;"></div>
+    <div class="raindrop" style="left: 60%;"></div>
+    <div class="raindrop" style="left: 70%;"></div>
+    <div class="raindrop" style="left: 80%;"></div>
+    <div class="raindrop" style="left: 90%;"></div>
+</body>
+
+</html>
